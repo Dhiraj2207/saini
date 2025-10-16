@@ -21,7 +21,8 @@
   <section style="padding: 20px;">
     <h2>About Me</h2>
     <p>Hello! I’m learning how to create a website using HTML. This is my first webpage.</p>
-    <img src="https://via.placeholder.com/300" alt="Sample Image">
+    <img src="![2](https://github.com/user-attachments/assets/858f2930-2905-4027-9a5c-46e50f87cae0)
+">
   </section>
 
   <footer style="background-color: #4CAF50; color: white; padding: 10px;">
