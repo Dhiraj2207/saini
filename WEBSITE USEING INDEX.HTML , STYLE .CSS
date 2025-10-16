@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Stylish Website</title>
+  <meta name="description" content="A clean responsive website using modern CSS (no frameworks)." />
+
+  <!-- Styles (single-file example) -->
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #06b6d4;
+      --glass: rgba(255,255,255,0.04);
+      --radius: 14px;
+      --max-width: 1100px;
+      --gap: 1.25rem;
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--bg), #071022 60%);
+      color:#e6eef3;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;justify-content:center;padding:2rem;
+      line-height:1.45;
+    }
+
+    .site{
+      width:100%;max-width:var(--max-width);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:18px;padding:1.5rem;box-shadow:0 10px 30px rgba(2,6,23,0.7);
+      backdrop-filter: blur(6px);
+    }
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .logo{
+      width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:grid;place-items:center;font-weight:700;color:#021018;font-size:1.05rem
+    }
+    .brand h1{margin:0;font-size:1.05rem}
+    nav{display:flex;gap:1rem;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:.45rem .6rem;border-radius:8px}
+    nav a:hover{color:#fff;background:var(--glass)}
+
+    .cta{display:inline-block;padding:.55rem .9rem;border-radius:12px;background:linear-gradient(90deg,var(--accent),#8b5cf6);color:#021018;font-weight:600;text-decoration:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:2rem;margin-top:1.25rem;align-items:center}
+    .hero .lead{max-width:62ch}
+    .kicker{display:inline-block;background:var(--glass);padding:.25rem .5rem;border-radius:999px;color:var(--muted);font-size:.85rem;margin-bottom:.6rem}
+    h2{font-size:clamp(1.4rem,2.8vw,2.2rem);margin:.1rem 0}
+    p.lead{color:var(--muted);margin-top:0}
+
+    /* Card on the right */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:1rem;box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)}
+    .stats{display:flex;gap:1rem;flex-direction:column}
+    .stat{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,0.02)}
+    .stat:last-child{border-bottom:0}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-top:1.25rem}
+    .feature{background:var(--card);padding:1rem;border-radius:12px}
+    .feature h3{margin:0 0 .35rem 0}
+    .feature p{margin:0;color:var(--muted);font-size:.95rem}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:1.25rem}
+    .thumb{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1.2rem;border-radius:12px;min-height:90px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 320px;gap:1rem;margin-top:1.25rem}
+    form{background:var(--card);padding:1rem;border-radius:12px}
+    label{display:block;font-size:.85rem;margin-bottom:.3rem;color:var(--muted)}
+    input,textarea{width:100%;padding:.6rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+    textarea{min-height:120px}
+    .btn{display:inline-block;padding:.6rem .9rem;border-radius:10px;background:linear-gradient(90deg,var(--accent),#8b5cf6);color:#021018;font-weight:600;border:none;cursor:pointer}
+
+    footer{margin-top:1.25rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.95rem}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      body{padding:1rem}
+      .site{padding:1rem}
+      nav{display:none}
+      .logo{width:40px;height:40px}
+      .features{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+    }
+
+    /* small utility */
+    .muted{color:var(--muted)}
+    .stack{display:flex;gap:.6rem;align-items:center}
+  </style>
+</head>
+<body>
+  <main class="site" role="main">
+    <header>
+      <div class="brand">
+        <div class="logo">SI</div>
+        <div>
+          <h1>SimpleSite</h1>
+          <div class="muted" style="font-size:.85rem">Beautiful, fast & responsive</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#contact">Get started</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <span class="kicker">New • 2025</span>
+        <h2 id="hero-title">Create a modern website using only HTML & CSS</h2>
+        <p class="lead">A single-file starter template with responsive layout, accessible components, and clean CSS variables—perfect for landing pages, portfolios, or small business sites.</p>
+
+        <div class="stack" style="margin-top:1rem">
+          <a class="cta" href="#contact">Start free</a>
+          <a href="#features" style="color:var(--muted);text-decoration:none;padding:.45rem .6rem;border-radius:8px">Explore features</a>
+        </div>
+
+        <div class="features" id="features">
+          <article class="feature">
+            <h3>Responsive grid</h3>
+            <p>Layouts that adapt from mobile to desktop using CSS grid and flexbox.</p>
+          </article>
+          <article class="feature">
+            <h3>Theme variables</h3>
+            <p>Easily tweak colors, radii and spacing using :root variables.</p>
+          </article>
+          <article class="feature">
+            <h3>Accessible forms</h3>
+            <p>Simple, labeled contact form ready to hook up to your backend.</p>
+          </article>
+        </div>
+      </div>
+
+      <aside class="card" aria-label="Quick stats">
+        <div class="stats">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <strong>Why choose us</strong>
+            <span class="muted">Trusted</span>
+          </div>
+          <div class="stat"><div class="muted">Pages shipped</div><div><strong>14k+</strong></div></div>
+          <div class="stat"><div class="muted">Active installs</div><div><strong>2.3k</strong></div></div>
+          <div class="stat"><div class="muted">Average load</div><div><strong>210ms</strong></div></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="gallery" class="gallery" aria-label="Gallery">
+      <div class="thumb">Design 1</div>
+      <div class="thumb">Design 2</div>
+      <div class="thumb">Design 3</div>
+      <div class="thumb">Design 4</div>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div>
+        <h3 id="contact-title">Get in touch</h3>
+        <p class="muted">Want this template customized? Send a message and we'll help you set it up.</p>
+
+        <form onsubmit="event.preventDefault();alert('Form submitted (demo) — hook to your backend)')">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us about your project"></textarea>
+
+          <div style="margin-top:.6rem"><button class="btn" type="submit">Send message</button></div>
+        </form>
+      </div>
+
+      <aside class="card">
+        <h4 style="margin-top:0">Contact info</h4>
+        <p class="muted">Email: hello@simplesite.example</p>
+        <p class="muted">Phone: +91 98765 43210</p>
+        <div style="margin-top:1rem">
+          <strong>Office</strong>
+          <p class="muted" style="margin:0">Mumbai, India</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> SimpleSite</div>
+      <div class="muted">Made with ♥ • <small>Single-file HTML + CSS</small></div>
+    </footer>
+  </main>
+
+  <script>
+    // small script to set year and handle tiny interactions
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
